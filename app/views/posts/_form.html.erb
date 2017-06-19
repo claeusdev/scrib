@@ -1,32 +1,43 @@
-<%= form_with(model: post, local: true, html: { multipart: true }) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <h2 class="text-center">Tell a story</h2>
+      <%= form_with(model: post, local: true, html: { multipart: true }) do |form| %>
+        <% if post.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+            <ul>
+            <% post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+        <div class="post-form">
+          <div class="form-group">
+            <%= form.text_field :title, id: :post_title, placeholder: "Title..." ,class: "form-control", autofocus: true, autocomplete: false %>
+          </div>
+
+          <label class="photo_upload">
+            <%= form.file_field :photo, id: :post_photo %>
+            <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+          </label>
+
+
+          <div class="form-group">
+            <%= form.text_area :content, cols: 10, rows: 15, id: :post_content,  placeholder: "Write your story" ,class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit class: "btn btn-outline-danger" %>
+          </div>
+        </div>
+        
       <% end %>
-      </ul>
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
   </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.file_field :photo, id: :post_photo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :post_content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

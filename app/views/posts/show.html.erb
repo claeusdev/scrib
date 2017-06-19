@@ -1,5 +1,26 @@
-<div class="container">
-	<div class="wrap-post">
-		
+<div class="bg-light">
+	<div class="container">
+		<div class="wrap-post">
+			<div class="post-panel">
+				<div class="post-body">
+					<div class="post-owner">
+						<div class="owner-img">
+							<%= link_to avatar_for(@post.user, size: 40), @post.user %>
+						</div>
+						<div class="post-info">
+							<p><%= link_to @post.user.username, @post.user %></p> 
+							<p><small class="text-muted"><%= time_ago_in_words(@post.created_at)	+ " ago" %></small>	</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<h1 class="post-head"><%= @post.title %></h1>
+
+				<div class="post-content">
+					<%= @post.content %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
