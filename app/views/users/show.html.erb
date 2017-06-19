@@ -1,0 +1,48 @@
+<div class="bg-faded">
+	<div class="profile-header">
+		<div class="container">
+			<div class="profile">
+				<h1 class="profile-title">
+					<%= @user.username %>
+				</h1>
+				
+				<div class="profile-avatar">
+					<%= avatar_for(@user, size: 80) %>
+				</div>
+			</div>
+			<div class="profile-stats">
+				<%= button_tag "Follow", class: "btn btn-danger" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section>
+	<div class="wrap-posts">
+		<div class="container">
+			<div class="row">
+				<% @user.posts.each do |p| %>
+					<div class="col-sm-6">
+						<div class="post-panel">
+							<div class="post-body">
+								<h3 class="post-title"><%= link_to p.title, p %></h3>
+								<div class="post-owner">
+									<div class="owner-img">
+										<%= link_to avatar_for(p.user, size: 40), p.user %>
+									</div>
+									<div class="post-info">
+										<p><%= link_to p.user.username, p.user %></p> 
+										<p><small class="text-muted"><%= time_ago_in_words(p.created_at)	+ " ago" %></small>	</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+

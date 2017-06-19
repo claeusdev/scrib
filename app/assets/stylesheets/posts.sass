@@ -1,0 +1,35 @@
+.wrap-posts, .wrap-post
+	width: 60%
+	max-width: 650px
+	margin: auto
+	padding-top: 2em
+	padding-bottom: 2.5em
+	@media screen and (max-width: 768px)
+		width: 100%
+		max-width: 100%
+
+.post-panel
+	padding: 20px
+	.post-body
+		.post-title
+			margin: 0 0
+			line-height: 16px
+			white-space: nowrap
+			a
+				color: $main
+				text-decoration: none
+				text-transform: capitalize
+				font-size: 17px
+				font-weight: 400
+				&:hover
+					color: $main
+					text-decoration: none
+					text-transform: capitalize
+
+		.post-owner
+			display: flex
+			.owner-img
+				margin-right: 15px
+			p
+				margin: 0
+				line-height: 16px
