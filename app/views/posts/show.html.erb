@@ -16,13 +16,22 @@
 			</div>
 			<div class="post">
 				<h1 class="post-head"><%= @post.title %></h1>
+				<span class="lead">Share</span>
+				<span><%= social_share_button_tag(@post.title) %></span>	
+				<!-- <hr> -->
+				<div class="post-photo">
+					<% if @post.photo.present? %>
 
+						<%= image_tag @post.photo.url, class: "img-fluid" %>
+
+					<% end %>
+				</div>
 				<div class="post-content">
 					<%= @post.content %>
 				</div>
 			</div>
 			
-			<!--  -->
+			
 		</div>
 	</div>
 </div>

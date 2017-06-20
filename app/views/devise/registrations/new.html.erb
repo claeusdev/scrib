@@ -11,6 +11,11 @@
             <%= f.text_field :username, autofocus: true, class: "form-control" %>
           </div>
 
+          <label class="photo_upload">
+            <%= f.file_field :avatar, id: :user_avatar %>
+            <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+          </label>
+
           <div class="form-group">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, class: "form-control" %>

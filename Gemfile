@@ -23,6 +23,8 @@ gem 'bootstrap'
 gem 'popper_js', '~> 1.9.9'
 gem "font-awesome-rails"
 gem 'aws-sdk'
+gem 'social-share-button'
+gem 'friendly_id', '~> 5.1.0'
 
 
 group :development, :test do
