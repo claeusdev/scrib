@@ -11,7 +11,9 @@
 				</div>
 			</div>
 			<div class="profile-stats">
-				<%= button_tag "Follow", class: "btn btn-danger" %>
+				<% if current_user && current_user.can_follow?(@user) %>
+					<%= follow_button @user %>
+				<% end %>
 			</div>
 		</div>
 	</div>

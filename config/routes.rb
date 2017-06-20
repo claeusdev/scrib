@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/show'
 
-  resources :posts
+  resources :posts, except: [:index] do
+    resources :comments, only: [:create]
+  end
+  
   devise_for :users, :controllers => {:registrations => "users/registrations"}
-  resources :users, only: [:show]
+
+  resources :users, :only => [:show] do
+  	post 'follow' => 'followings#create'
+  	delete 'follow' => 'followings#destroy'
+  end
   get 'pages/index'
 
   get 'pages/abot'
