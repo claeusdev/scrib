@@ -11,6 +11,8 @@ class Post < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
+  has_many :comments, as: :commentable
+
   validates :title, :content, presence: true
   validates :slug, uniqueness: true, presence: true
 

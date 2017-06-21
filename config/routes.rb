@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :posts, except: [:index] do
-    resources :comments, only: [:create]
+  resources :posts do
+    resources :comments, module: :posts
   end
   
   devise_for :users, :controllers => {:registrations => "users/registrations"}
