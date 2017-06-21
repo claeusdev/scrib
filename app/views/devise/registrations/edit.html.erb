@@ -40,6 +40,11 @@
             <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
           </div>
 
+          <div class="form-group">
+            <%= f.label :about %><br />
+            <%= f.text_area :about, class: "form-control" %>
+          </div>
+
           <div>
             <label class="photo_upload">
               <%= f.file_field :avatar, id: :user_avatar %>

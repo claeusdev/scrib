@@ -5,4 +5,8 @@ class PagesController < ApplicationController
 
   def abot
   end
+
+  def home
+  	
+  end
 end

@@ -1,8 +1,9 @@
 <div class="comment-section">
-				
 	<% commentable.comments.each do |c| %>
-		<div class="well">
-			<%= c.body %>
+		<div class="post-panel">
+			<%= avatar_for(c.user, size: 40) %>
+			<%= link_to c.user.username, c.user %> commented:
+			<p><%= c.body %></p> 
 		</div>
 	<% end %>
 </div>

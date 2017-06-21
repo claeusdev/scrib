@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require popper
+//= require tether
 //= require bootstrap
 //= require social-share-button
 

@@ -1,10 +1,12 @@
-<div class="bg-faded">
+<div class="bg-white">
 	<div class="profile-header">
 		<div class="container">
 			<div class="profile">
-				<h1 class="profile-title">
+				<div class="profile-title">
 					<%= @user.username %>
-				</h1>
+					<p><%= @user.about %></p>
+				</div>
+				
 				
 				<div class="profile-avatar">
 					<%= avatar_for(@user, size: 80) %>
@@ -14,6 +16,8 @@
 				<% if current_user && current_user.can_follow?(@user) %>
 					<%= follow_button @user %>
 				<% end %>
+				<span><%= @user.followers.size %> followers</span> | 
+				<span><%= @user.followed_users.size %> following</span>
 			</div>
 		</div>
 	</div>

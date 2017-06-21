@@ -26,6 +26,10 @@ gem 'social-share-button'
 gem 'friendly_id', '~> 5.1.0'
 
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

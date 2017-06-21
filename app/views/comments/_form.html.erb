@@ -1,9 +1,13 @@
-<%= form_with(model: [commentable, @comment]) do |f| %>
-	<div class="form-group">
-		<%= f.text_field :body, class: "form-control", placeholder: 'Your thoughts' %>
-	</div>
+<div class="card">
+	<div class="card-block">
+		<%= form_with(model: [commentable, @comment]) do |f| %>
+			<div class="form-group">
+				<%= f.text_area :body, class: "form-control", placeholder: 'Your thoughts' %>
+			</div>
 
-	<div class="actions">
-		<%= f.submit 'Post', class: 'btn btn-default' %>
+			<div class="actions">
+				<%= f.submit 'Post', class: 'btn btn-danger' %>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+</div>
