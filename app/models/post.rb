@@ -2,7 +2,7 @@ class Post < ApplicationRecord
 	extend FriendlyId
   friendly_id :title, use: :slugged
 
-	has_attached_file :photo, styles: { medium: "300x300>", thumb: "80x80>" }, default_url: "/images/:style/missing.svg"
+	has_attached_file :photo, styles: { large: "600x400>",medium: "300x300>", thumb: "80x80>" }, default_url: "/images/:style/missing.svg"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
   
 

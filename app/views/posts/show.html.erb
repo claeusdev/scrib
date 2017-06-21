@@ -22,7 +22,7 @@
 				<div class="post-photo">
 					<% if @post.photo.present? %>
 
-						<%= image_tag @post.photo.url, class: "img-fluid" %>
+						<%= image_tag @post.photo.url(:medium), class: "img-fluid" %>
 
 					<% end %>
 				</div>
