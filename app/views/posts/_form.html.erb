@@ -31,6 +31,10 @@
             <%= form.text_area :content, cols: 10, rows: 15, id: :post_content,  placeholder: "Write your story" ,class: "form-control" %>
           </div>
 
+          <div class="form-group">
+            <%= form.text_field :all_tags, id: :tags, placeholder: "Title..." ,class: "form-control", autofocus: true, autocomplete: false %>
+          </div>
+
           <div class="actions">
             <%= form.submit class: "btn btn-outline-danger" %>
           </div>
